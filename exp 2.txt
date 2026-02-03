@@ -1,0 +1,61 @@
+DBMSL 2
+
+update instructor set salary = salary + salary *.1 where dept_id = (select dept_id from department where name = 'Computer Science');
+
+update instructor set salary = salary + salary * .05 where salary < 70000;
+
+insert into course(course_id, title, dept_id, credits) values ('CS-001', 'Weekly Seminar', 1, 1);
+
+insert into section (section_id, course_id, sec_id, semester, year, building, room_number, time_slot_id) values (8, 'CS-001', 1, 'fall', 2017, '', '312', 'a');
+
+to create sequence:
+create sequence emp_sq start with 1 increment by 1;
+
+create table emp (emp_id int primary key, name varchar2(20));
+
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Akshan');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Tanishq');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Bittu');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Harsh');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Parul');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Shreya');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Satvik');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Manish');
+insert into emp (emp_id, name) values (emp_sq.nextval, 'Parth');
+
+alter table emp add mobile_number varchar2(10);
+
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Akshan', 9424727255);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Tanishq', 9648264825);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Bittu', 9264782962);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Harsh', 9164762865);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Parul', 9876567898);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Shreya', 9845835642);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Satvik', 9347535753);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Manish', 9347654246);
+insert into emp (emp_id, name, mobile_number) values (emp_sq.nextval, 'Parth', 9265418745);
+
+truncate table emp;
+
+drop sequence emp_sq;
+
+create sequence emp_sq start with 1 increment by 1;
+
+alter table emp add pin_code varchar2(10);
+
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Akshan', '9424727255', '72952');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Tanishq', '9648264825', '24937');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Bittu', '9264782962', '17439');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Harsh', '9164762865', '19472');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Parul', '9876567898', '17493');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Shreya', '9845835642', '19473');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Satvik', '9347535753', '19473');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Manish', '9347654246', '19473');
+insert into emp (emp_id, name, mobile_number, pin_code) values (emp_sq.nextval, 'Parth', '9265418745', '18473');
+
+select instructor_id, name from instructor where dept_id = (select dept_id from department where name = 'Computer Science');
+
+select i.instructor_id, i.name, i.salary, d.name from instructor I join department d on i.dept_id = d.dept_id where d.name = 'Computer Science';
+
+
+
