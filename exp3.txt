@@ -1,4 +1,4 @@
-Practical 3
+DBMSL 3
 join command: 
 select instructor_id,name from instructor WHERE dept_id = (SELECT dept_id FROM DEPARTMENT WHERE name = 'Computer Science'; #alternative
 select i.instructor_id,i.name,i.salary,d.name from instructor I join Department d on i.dept_id=d.dept_id where d.name='Computer Science';
